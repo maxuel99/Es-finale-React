@@ -4,7 +4,6 @@ import { useState } from "react"
 
 const Home = () => {
     const [data, setData] = useState('')
-    const [counter, setCounter] = useState(0)
     const [frase, setFrase] = useState('')
     const [item, setItem] = useState([])
     const [listodd, setListOdd] = useState(false)
@@ -22,7 +21,7 @@ const Home = () => {
             setData(data)
             setFrase(data)
             item.push(data)
-            console.log(data)
+            // console.log(data)
             
             let DATA = data.substring(0, 4)
             if (DATA % 2 === 0) {
@@ -33,7 +32,7 @@ const Home = () => {
             
         })
     }
-    
+
     const handleListOdd = () => {
         setListOdd(!listodd)
     }
@@ -49,12 +48,6 @@ const Home = () => {
         <div>
             <p>{frase}</p>
             <button onClick={handleClick}>Click</button>
-            
-            {/* <ul>
-                {item.map((frase, index) => {
-                    return <li key={index}>{frase}</li>
-                })}
-            </ul> */}
         
             <button onClick={handleListOdd}>Odd</button>
             {listodd && <Odd sentence={dispari} />}
